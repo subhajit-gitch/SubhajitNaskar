@@ -12,12 +12,22 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const now = new Date();
+    const dateOptions = { day: '2-digit', month: 'short', year: 'numeric' };
+    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const formattedDate = now.toLocaleDateString('en-GB', dateOptions).replace(/ /g, ' ');
+    const formattedTime = now.toLocaleTimeString('en-US', timeOptions);
+
+
     const data = {
       Name: name,
       Email: email,
       Number: number,
       Subject: subject,
-      Message: message
+      Message: message,
+      Date:formattedDate,
+      Time: formattedTime
     }
     axios.post('https://sheet.best/api/sheets/1311d85e-d20e-4424-a310-8c5ee739a25a', data).then((res) => {
       setName('')
