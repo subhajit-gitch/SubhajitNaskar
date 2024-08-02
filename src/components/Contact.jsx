@@ -58,7 +58,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" required
             onChange={(e) => setName(e.target.value)} value={name}
           />
@@ -74,7 +74,7 @@ export default function Contact() {
           <textarea name="message" placeholder="Type here..." required
             onChange={(e) => setMessage(e.target.value)} value={message}
           ></textarea>
-          <button type="submit" onClick={handleSubmit}>Send Message</button>
+          <button type="submit" >Send Message</button>
         </form>
       </div >
       <Footer />
