@@ -1,0 +1,68 @@
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  gap: 20px;
+}
+.project-container h1 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 90px;
+  color: #007bff;
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.project-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+
+.project-card h3 {
+  margin: 0;
+  padding: 15px;
+  background-color: #fff;
+  font-size: 1.2em;
+}
+
+.project-card {
+  text-decoration: none;
+  box-shadow: 0 6px 8px rgba(146, 238, 218, 0.788);
+  color: inherit;
+}
+
+.project-card a:hover {
+  color: #007acc;
+  
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .project-container h1 {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 300px; /* Keeps cards from becoming too wide on larger phones */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly less shadow on mobile */
+  }
+
+  .projects-grid {
+    gap: 10px; /* Reduce gap between cards */
+  }
+}

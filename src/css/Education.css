@@ -1,0 +1,132 @@
+
+.education-container h1 {
+  font-size: 3rem;
+  color: #007bff;
+  text-align: center;
+  padding: 90px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.education-card {
+  display: flex;
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(42, 235, 225, 0.911);
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.education-icon {
+  color: #3c80e7;
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.education-details {
+  flex-grow: 1;
+}
+
+.year-range {
+  color: #3c80e7;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #3c9ae7;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  z-index: 0;
+}
+
+.education-card:nth-child(odd) {
+  flex-direction: row-reverse;
+  text-align: right;
+  margin-right: 600px;
+}
+
+.education-card:nth-child(odd) .education-icon {
+  margin-left: 15px;
+  margin-right: 0;
+}
+
+.education-card:nth-child(even) {
+  text-align: left;
+  margin-left: 600px;
+}
+
+.education-card:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  border-radius: 50%;
+  margin-top: -7.5px;
+  margin-left: -7.5px;
+}
+
+.education-card:nth-child(odd):after {
+  left: calc(50% + 15px);
+}
+
+.education-card:nth-child(even):after {
+  left: calc(50% - 15px);
+} 
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .timeline {
+    width: 100%;
+  }
+
+  .education-card {
+    margin: 10px 0;
+    max-width: 100%;
+  }
+
+  .education-card:nth-child(odd),
+  .education-card:nth-child(even) {
+    flex-direction: column;
+    text-align: left;
+    margin: 10px auto;
+  }
+
+  .education-card:nth-child(odd) .education-icon,
+  .education-card:nth-child(even) .education-icon {
+    margin: 0 0 15px 0;
+  }
+
+  .timeline:before {
+    left: 20px;
+  }
+
+  .education-card:after {
+    left: 20px;
+    margin-left: -7.5px;
+  }
+
+  .education-card:nth-child(odd):after,
+  .education-card:nth-child(even):after {
+    left: 20px;
+  }
+}
