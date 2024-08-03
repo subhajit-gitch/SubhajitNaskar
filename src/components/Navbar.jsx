@@ -32,12 +32,22 @@ export default function Navbar() {
       setLastScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const debounceHandleScroll = debounce(handleScroll, 50);
+
+    window.addEventListener("scroll", debounceHandleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", debounceHandleScroll);
     };
   }, [lastScrollY]);
+
+  const debounce = (func, wait) => {
+    let timeout;
+    return () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, arguments), wait);
+    };
+  };
 
   return (
     <nav className={`navbar fixed-top ${scrollDirection === "down" ? "hidden" : ""}`}>
@@ -47,7 +57,7 @@ export default function Navbar() {
         </li>
       </ul>
 
-      <div className={`menu-toggle ${menuOpen ? "is-active" : ""}`} onClick={toggleMenu}>
+      <div className={`menu-toggle ${menuOpen ? "is-active" : ""}`} onClick={toggleMenu} aria-label="Toggle menu">
         <div className="hamburger"></div>
       </div>
       <ul className={`navbar-list navbar-right ${menuOpen ? "is-active" : ""}`}>
