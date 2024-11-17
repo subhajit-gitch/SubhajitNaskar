@@ -1,5 +1,5 @@
 import '../css/Home.css';
-import CV from '../image/Subhajit_Naskar_CV.pdf';
+import CV from '../image/Subhajit-Naskar-CV.pdf';
 import ProfilePic from '../image/ProfilePic.png'//image
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
@@ -16,7 +16,7 @@ export default function Home() {
                 <h1>Hi, I'm <span className="highlight">Subhajit</span></h1>
                 <h2>{data} <Cursor /></h2>
 
-                <a href={CV} download="Subhajit_Naskar_CV.pdf">
+                <a href={CV} download="Subhajit-Naskar-CV.pdf">
                     <button className="downloadCV-button">Download CV</button>
                 </a>
             </div>

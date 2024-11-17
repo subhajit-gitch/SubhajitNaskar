@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Skills.css';
-import { FaHtml5, FaCss3, FaBootstrap, FaJava, FaJs, FaPython, FaDatabase, FaReact, FaLeaf } from 'react-icons/fa';
+import { FaHtml5, FaCss3, FaBootstrap, FaJava, FaJs, FaPython, FaDatabase, FaReact,FaLeaf } from 'react-icons/fa';
+import { SiMysql } from 'react-icons/si';
 import SkillsImage from '../image/Skills.jpg'; // image
 
 const skills = [
@@ -12,6 +13,7 @@ const skills = [
     { name: 'PYTHON', level: 45, icon: <FaPython /> },
     { name: 'SQL', level: 50, icon: <FaDatabase /> },
     { name: 'REACT', level: 60, icon: <FaReact /> },
+    { name: 'MY SQL', level: 50, icon: <SiMysql /> },
     { name: 'MONGODB', level: 50, icon: <FaLeaf /> },
 ];
 
