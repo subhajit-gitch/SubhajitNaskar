@@ -1,0 +1,132 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  color: rgb(4, 87, 194);
+  position: fixed;
+  width: 100%;
+  height: 20px;
+  top: 0;
+  z-index: 100;
+  background-color: #fafafa;
+  transition: top 0.3s;
+}
+
+.navbar.hidden {
+  top: -100px;
+  /* Adjust this value according to the height of your navbar */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  list-style: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo:hover {
+  color: #06f3df;
+}
+
+.navbar-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 30px;
+  /* Increased width for better visibility */
+}
+
+.hamburger,
+.hamburger:before,
+.hamburger:after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #000;
+  /* Ensure the color is visible */
+  margin: 3px 0;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.menu-toggle.is-active .hamburger {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.is-active .hamburger:before {
+  transform: rotate(-90deg);
+  top: 0;
+}
+
+.menu-toggle.is-active .hamburger:after {
+  opacity: 0;
+}
+
+.menu-toggle .hamburger:before,
+.menu-toggle .hamburger:after {
+  position: relative;
+}
+
+.menu-toggle .hamburger:before {
+  top: -13px;
+}
+
+.menu-toggle .hamburger:after {
+  top: 1px;
+}
+
+.navbar-item {
+  margin: 0 15px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-item:hover {
+  color: #06f3df;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #fcfafa;
+    width: 100%;
+    height: calc(100vh-60px);
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 0;
+  }
+
+  .navbar-list.is-active {
+    transform: translateX(0);
+  }
+
+  .navbar-item {
+    margin: 20px 0;
+  }
+}
