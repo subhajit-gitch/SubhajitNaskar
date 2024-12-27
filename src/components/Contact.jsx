@@ -29,7 +29,8 @@ export default function Contact() {
       Date:formattedDate,
       Time: formattedTime
     }
-    axios.post('https://sheet.best/api/sheets/1311d85e-d20e-4424-a310-8c5ee739a25a', data).then((res) => {
+    axios.post('https://script.google.com/macros/s/AKfycbww9OfBu6zc4KDM3R6Bgxi4fWGkM-SHI_NXd0lUBvy2RQl4UgG9gHat27t1sdgRR9U/exec', data).then((res) => {
+      //https://script.google.com/macros/s/AKfycbww9OfBu6zc4KDM3R6Bgxi4fWGkM-SHI_NXd0lUBvy2RQl4UgG9gHat27t1sdgRR9U/exec
       setName('')
       setEmail('')
       setNumber('')
